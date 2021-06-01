@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUp from "./SignUp";
 import DashBoard from "./DashBoard";
 import Login from "./Login";
+import PrivateRoute from "./PrivateRoute";
 
 // Functional Component
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              <Route exact path="/" component={DashBoard} />
+              <PrivateRoute exact path="/" component={DashBoard} />
               <Route path="/signup" component={SignUp} />
               <Route path="/login" component={Login} />
             </Switch>
